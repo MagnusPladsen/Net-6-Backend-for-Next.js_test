@@ -1,8 +1,11 @@
+using net60_react.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddSingleton<TicketsRepository, InMemTicketsRepository>();
 
 var app = builder.Build();
 
