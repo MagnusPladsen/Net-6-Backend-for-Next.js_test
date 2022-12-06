@@ -9,8 +9,8 @@ namespace net60_react.Entities
         public string? Logo { get; set; }
         public Dates Dates { get; set; }
         public Product Product { get; set; }
-        public EventLocationInfo LocationInfo { get; set; }
-        public EventContactInfo ContactInfo { get; set; }
+        public EventLocationInfo EventLocationInfo { get; set; }
+        public EventContactInfo EventContactInfo { get; set; }
         public Program Program { get; set; }
         public object Rules { get; set; }    // Hvordan få "{[key: string] string }" ??
     }
