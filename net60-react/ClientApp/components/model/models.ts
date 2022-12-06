@@ -83,8 +83,9 @@ interface Ticket {
   name: string;
   price: number;
   discountCode?: DiscountCode[];
-  description?: string;
-  icon?: string;
+  description: string;
+  icon: string;
+  createdDate?: string;
 }
 
 interface AddOnProduct {

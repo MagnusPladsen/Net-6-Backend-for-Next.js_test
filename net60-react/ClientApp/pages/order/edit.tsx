@@ -2,11 +2,12 @@ import { Formik } from "formik";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import { useState } from "react";
-import EditTickets from "../../components/tiles/edit/EditTickets.component";
+import { useGetTicketsQuery } from "../../api/apiSlice";
+import EditTickets from "../../components/edit/EditTickets.component";
 import { TICKETS } from "./tickets/[id]";
 
 const EditMapLeaflet = dynamic(
-  () => import("../../components/tiles/edit/EditMapLeaflet"),
+  () => import("../../components/edit/EditMapLeaflet"),
   { ssr: false }
 );
 
@@ -14,6 +15,7 @@ export default function Edit() {
   const [editMap, setEditMap] = useState(true);
   const [editTickets, setEditTickets] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
+  
   return (
     <Formik
       initialValues={{
@@ -57,7 +59,6 @@ export default function Edit() {
             <div className="mt-6 w-[80%] mx-auto mb-16">
               <EditTickets
                 name="tickets"
-                tickets={values.tickets}
                 editTickets={editTickets}
                 setEditTickets={setEditTickets}
                 modalOpen={modalOpen}

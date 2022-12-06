@@ -7,11 +7,12 @@ namespace net60_react
     {
         public static TicketDto AsDto(this Ticket ticket)
         {
-            return new TicketDto(ticket.Id, ticket.Name, ticket.Description, ticket.Price, ticket.CreatedDate)
+            return new TicketDto(ticket.Id, ticket.Name, ticket.Description, ticket.Price, ticket.Icon, ticket.CreatedDate)
             {
                 Id = ticket.Id,
                 Name = ticket.Name,
                 Price = ticket.Price,
+                Icon = ticket.Icon,
                 CreatedDate = ticket.CreatedDate,
             };
         }

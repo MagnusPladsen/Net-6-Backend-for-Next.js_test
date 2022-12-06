@@ -8,16 +8,16 @@ namespace net60_react.Repositories
         {
 
             new Ticket{
-                Id = Guid.NewGuid(), Name = "Ticket-01", Price = 1500, Description = "Tilskuer", CreatedDate = DateTimeOffset.UtcNow
+                Id = Guid.NewGuid(), Name = "Tilskuer", Price = 1500, Description = "Tilskuer", Icon = "/images/icons/ticketIcon.svg", CreatedDate = DateTimeOffset.UtcNow
             },
             new Ticket{
-                Id = Guid.NewGuid(), Name = "Ticket-02", Price = 2000, Description = "Tilskuer med VIP plass", CreatedDate = DateTimeOffset.UtcNow
+                Id = Guid.NewGuid(), Name = "Tilskuer PREMIUM", Price = 2000, Description = "Tilskuer med PREMIUM plasssering", Icon = "/images/icons/ticketIcon.svg", CreatedDate = DateTimeOffset.UtcNow
             },
             new Ticket{
-                Id = Guid.NewGuid(), Name = "Ticket-03", Price = 2500, Description = "Campingplass", CreatedDate = DateTimeOffset.UtcNow
+                Id = Guid.NewGuid(), Name = "Camping", Price = 2500, Description = "Campingplass", Icon = "/images/icons/campingIcon.svg", CreatedDate = DateTimeOffset.UtcNow
             },
             new Ticket{
-                Id = Guid.NewGuid(), Name = "Ticket-04", Price = 3000, Description = "Campingplass med strøm", CreatedDate = DateTimeOffset.UtcNow
+                Id = Guid.NewGuid(), Name = "Camping med strøm", Price = 3000, Description = "Campingplass med strøm", Icon = "/images/icons/campingIcon.svg", CreatedDate = DateTimeOffset.UtcNow
             },
         };
 

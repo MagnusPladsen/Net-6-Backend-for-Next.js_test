@@ -56,6 +56,7 @@ namespace net60_react.Controllers
                 Id = Guid.NewGuid(),
                 Name = ticketDto.Name,
                 Description = ticketDto.Description,
+                Icon = ticketDto.Icon,
                 Price = ticketDto.Price,
                 CreatedDate = DateTimeOffset.UtcNow
             };
@@ -79,6 +80,8 @@ namespace net60_react.Controllers
 
             existingticket.Name = ticketDto.Name;
             existingticket.Price = ticketDto.Price;
+            existingticket.Description = ticketDto.Description;
+            existingticket.Icon = ticketDto.Icon;
 
             await repository.UpdateTicketAsync(existingticket);
 

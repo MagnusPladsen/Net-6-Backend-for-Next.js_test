@@ -3,11 +3,11 @@ import Head from "next/head";
 import { useState } from "react";
 import CustomerInfoForm from "../../../components/form/CustomerInfoForm.component";
 import Order from "../../../components/order/Order.component";
-import stepValidations from "../../../components/stepper/stepValidations";
 import OrderStep from "../../../components/order/OrderStep.component";
-import Payment from "../../../components/tiles/payment/Payment.steps";
+import stepValidations from "../../../components/stepper/stepValidations";1
 import PlacementStep from "../../../components/map/Placement.step";
-import TicketsStep from "../../../components/tiles/ticket/Tickets.step";
+import Payment from "../../../components/payment/Payment.steps";
+import TicketsStep from "../../../components/ticket/Tickets.step";
 
 export interface Tickets {
   [key: string]: {

@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/tiles/calendar/NewCalendar.component.tsx", "pages/order/summary.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/calendar/NewCalendar.component.tsx", "pages/order/summary.tsx"],
   "exclude": ["node_modules"]
 }
