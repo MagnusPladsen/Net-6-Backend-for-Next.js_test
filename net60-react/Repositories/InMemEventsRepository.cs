@@ -7,110 +7,110 @@ namespace net60_react.Repositories
         private readonly List<Event> events = new()
         {
 
-            new Event{
-                Id = Guid.NewGuid(), Name = "Vinstra Country Festival 2024", Description = "Vintra Country Festival 2024", Image = "/images/hero.jpeg", Logo = "/images/vinstraFestival.png",
-                Dates = {
-                    StartDate = DateTimeOffset.UtcNow, EndDate = DateTimeOffset.UtcNow
+            new Event {
+                Id = Guid.NewGuid(),
+                Name = "Vinstra Country Festival 2024",
+                Description = "Vintra Country Festival 2024",
+                Image = "/images/hero.jpeg",
+                Logo = "/images/vinstraFestival.png",
+                Dates = new Dates() {
+                    StartDate = DateTimeOffset.UtcNow,
+                    EndDate = DateTimeOffset.UtcNow
                 },
-                Product = {
-                    Id = Guid.NewGuid(),
-                    Name = "Ticket-01",
-                    Item = {
+                Products = new List<Product>() {
+                    new Product {
                         Id = Guid.NewGuid(),
                         Name = "Ticket-01",
-                        Active = true,
-                        Type = "Ticket",
-                        Price = {
-                            Id = Guid.NewGuid(),
-                            PriceNumber = 1500,
-                            Tax = 25,
-                            StartDate = DateTimeOffset.UtcNow,
-                            EndDate = DateTimeOffset.UtcNow,
-                        },
-                        Unit = "HuskerIkkeHvaUnitVar",
-                        BookAbleResource = {
-                            Id = Guid.NewGuid(),
-                            Name = "Placement",
-                            StartDate = DateTimeOffset.UtcNow,
-                            EndDate = DateTimeOffset.UtcNow,
-                            Bounds = {
-                                SouthWest = 00,
-                                NorthEast = 00,
-                                NorthWest = 00,
-                                SouthEasth = 00,
+                        Items = new List<Item>() {
+                            new Item {
+                                Id = Guid.NewGuid(),
+                                Name = "Ticket-01",
+                                Active = true,
+                                Type = "Ticket",
+                                Price = new Price() {
+                                    Id = Guid.NewGuid(),
+                                    PriceNumber = 1500,
+                                    Tax = 25,
+                                    StartDate = DateTimeOffset.UtcNow,
+                                    EndDate = DateTimeOffset.UtcNow,
+                                },
+                                Unit = "HuskerIkkeHvaUnitVar",
+                                BookAbleResource = new BookAbleResource() {
+                                    Id = Guid.NewGuid(),
+                                    Name = "Ticket Placement",
+                                    Type = "Placement",
+                                    StartDate = DateTimeOffset.UtcNow,
+                                    EndDate = DateTimeOffset.UtcNow,
+                                    Bounds = new LatLngBoundsExpression() {
+                                        SouthWest = 00,
+                                        NorthEast = 00,
+                                        NorthWest = 00,
+                                        SouthEasth = 00,
+                                    },
+                                },
                             },
                         },
+                        Type = "Standard Billett",
                     },
-                    Type = "Standard Billett",
                 },
-                EventLocationInfo = {
+                EventLocationInfo = new EventLocationInfo() {
                     Address = "Ola Nordmannsgate 01",
                     ZipCode = "2612",
                     City = "Lillehammer",
                     Country = "Norway",
                 },
-                EventContactInfo = {
+                EventContactInfo = new EventContactInfo() {
                     Email = "kontakt@fake-no",
                     PhoneNumber = "9988776655",
-                    Website = "www.fake.no",
+                    Website = "https://www.fake.no",
                 },
-                Program = {
-                    Artist = {
-                        Id = Guid.NewGuid(),
-                        Name = "Hellbillies",
-                        Description ="Hellbillies er en rockegruppe fra Ål i Hallingdal som ble startet i 1990. Gruppen har gitt ut elleve studioalbum og fire konsert- og ett samlealbum og de fleste har solgt til gull eller platina.",
-                        Image =  "/images/artist/hellbillies.jpeg",
+                Program =  new Program() {
+                    Artists = new List<Artist>() {
+                        new Artist {
+                            Id = Guid.NewGuid(),
+                            Name = "Hellbillies",
+                            Description ="Hellbillies er en rockegruppe fra Ål i Hallingdal som ble startet i 1990. Gruppen har gitt ut elleve studioalbum og fire konsert- og ett samlealbum og de fleste har solgt til gull eller platina.",
+                            Image =  "/images/artist/hellbillies.jpeg",
+                        },
                     },
-                    Scene = {
-                        id = Guid.NewGuid(),
-                        Name = "Hovedscene",
-                        Description = "Hovedscenen i midten av festivalen.",
-                        Location = "Midten av festivalen",
+                    Scenes = new List<Scene>() {
+                        new Scene {
+                            id = Guid.NewGuid(),
+                            Name = "Hovedscene",
+                            Description = "Hovedscenen i midten av festivalen.",
+                            Location = "Midten av festivalen",
+                        },
                     },
-                    Happening = {
-                        Id = Guid.NewGuid(),
-                        Name = "Hellbillies på Hovedscenen",
-                        Description = "Hellbillies på Hovedscenen.",
-                        ArtistId = Guid.NewGuid(),
-                        SceneId = Guid.NewGuid(),
-                        StartDate = DateTimeOffset.UtcNow,
-                        EndDate = DateTimeOffset.UtcNow,
+                    Happenings = new List<Happening>() {
+                        new Happening {
+                            Id = Guid.NewGuid(),
+                            Name = "Hellbillies på Hovedscenen",
+                            Description = "Hellbillies på Hovedscenen.",
+                            ArtistId = Guid.NewGuid(),
+                            SceneId = Guid.NewGuid(),
+                            StartDate = DateTimeOffset.UtcNow,
+                            EndDate = DateTimeOffset.UtcNow,
+                         },
                     },
                 },
-                Rules = {
-                    "Regel 1" = "Regel 1 er viktig."
-                }
-            },
+                Rules = new List<Rule>() {
+                    new Rule {
+                        RuleTitle = "Regel 1",
+                        RuleContent = "Regel 1 er veldig viktig."
+                    },
+                },
+            }
         };
 
-        public async Task<IEnumerable<Ticket>> GetTicketsAsync()
+        public async Task<IEnumerable<Event>> GetEventsAsync()
         {
-            return await Task.FromResult(tickets);
+            return await Task.FromResult(events);
         }
 
-        public async Task<Ticket> GetTicketAsync(Guid id)
+        public async Task DeleteEventAsync(Guid id)
         {
-            var ticket = tickets.Where(ticket => ticket.Id == id).SingleOrDefault();
-            return await Task.FromResult(ticket);
-        }
-
-        public async Task CreateTicketAsync(Ticket ticket)
-        {
-            tickets.Add(ticket);
-            await Task.CompletedTask;
-        }
-
-        public async Task UpdateTicketAsync(Ticket ticket)
-        {
-            var index = tickets.FindIndex(existingTicket => existingTicket.Id == ticket.Id);
-            tickets[index] = ticket;
-            await Task.CompletedTask;
-        }
-
-        public async Task DeleteTicketAsync(Guid id)
-        {
-            var index = tickets.FindIndex(existingTicket => existingTicket.Id == id);
-            tickets.RemoveAt(index);
+            var index = events.FindIndex(existingEvent => existingEvent.Id == id);
+            events.RemoveAt(index);
             await Task.CompletedTask;
         }
     }

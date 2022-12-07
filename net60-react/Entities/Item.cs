@@ -8,6 +8,7 @@ namespace net60_react
         public Price Price { get; set; }
         public string Type { get; set; }
         public string Unit { get; set; }
-        public BookAbleResource? BookAbleResource { get; set; }
+        
+        public BookAbleResource? BookAbleResource { get; set; } = null;
     }
 }

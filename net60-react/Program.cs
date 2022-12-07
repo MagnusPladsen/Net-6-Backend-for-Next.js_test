@@ -7,6 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<TicketsRepository, InMemTicketsRepository>();
+builder.Services.AddSingleton<EventsRepository, InMemEventsRepository>();
+builder.Services.AddSingleton<OrdersRepository, InMemOrdersRepository>();
 builder.Services.AddCors(p => p.AddPolicy("corsapp", builder =>
     {
         builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();

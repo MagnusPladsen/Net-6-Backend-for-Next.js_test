@@ -4,7 +4,7 @@ namespace net60_react
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
-        public Item Item { get; set; }
+        public List<Item> Items { get; set; }
         public string Type { get; set; }
     }
 }

@@ -4,7 +4,7 @@ namespace net60_react
     {
         public Guid OrderId { get; set; }
         public CustomerInfo CustomerInfo { get; set; }
-        public Product Product { get; set; }
-        public DiscountCode? DiscountCode { get; set; }
+        public List<Product> Products { get; set; }
+        public DiscountCode? DiscountCode { get; set; } = null;
     }
 }
