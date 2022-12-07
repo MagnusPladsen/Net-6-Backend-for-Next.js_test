@@ -9,5 +9,8 @@ namespace net60_react.Repositories
         Task DeleteEventAsync(Guid id);
         Task UpdateEventAsync(Event Event);
         Task UpdateEventDatesAsync(Event Event);
+        Task UpdateEventLocationInfoAsync(Event Event);
+        Task UpdateEventContactInfoAsync(Event Event);
+
     }
 }

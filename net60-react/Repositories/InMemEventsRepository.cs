@@ -133,5 +133,19 @@ namespace net60_react.Repositories
             events[index] = Event;
             await Task.CompletedTask;
         }
+
+        public async Task UpdateEventLocationInfoAsync(Event Event)
+        {
+            var index = events.FindIndex(existingEvent => existingEvent.Id == Event.Id);
+            events[index] = Event;
+            await Task.CompletedTask;
+        }
+
+        public async Task UpdateEventContactInfoAsync(Event Event)
+        {
+            var index = events.FindIndex(existingEvent => existingEvent.Id == Event.Id);
+            events[index] = Event;
+            await Task.CompletedTask;
+        }
     }
 }
