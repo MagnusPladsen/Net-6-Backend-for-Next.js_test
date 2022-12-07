@@ -49,7 +49,7 @@ namespace net60_react.Controllers
 
         // POST /tickets
         [HttpPost]
-        public async Task<ActionResult<TicketDto>> CreateticketAsync(CreateTicketDto ticketDto)
+        public async Task<ActionResult<TicketDto>> CreateTicketAsync(CreateTicketDto ticketDto)
         {
             Ticket ticket = new()
             {
@@ -78,10 +78,25 @@ namespace net60_react.Controllers
                 return NotFound();
             }
 
-            existingticket.Name = ticketDto.Name;
-            existingticket.Price = ticketDto.Price;
-            existingticket.Description = ticketDto.Description;
-            existingticket.Icon = ticketDto.Icon;
+            if (ticketDto.Name is not null)
+            {
+                existingticket.Name = ticketDto.Name;
+            }
+
+            if (ticketDto.Price is not null)
+            {
+                existingticket.Price = (decimal)ticketDto.Price;
+            }
+
+            if (ticketDto.Description is not null)
+            {
+                existingticket.Description = ticketDto.Description;
+            }
+
+            if (ticketDto.Icon is not null)
+            {
+                existingticket.Icon = ticketDto.Icon;
+            }
 
             await repository.UpdateTicketAsync(existingticket);
 
