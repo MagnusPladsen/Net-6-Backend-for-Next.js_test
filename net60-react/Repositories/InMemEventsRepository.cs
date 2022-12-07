@@ -107,10 +107,30 @@ namespace net60_react.Repositories
             return await Task.FromResult(events);
         }
 
+        public async Task<Event> GetEventAsync(Guid id)
+        {
+            var Event = events.Where(Event => Event.Id == id).SingleOrDefault();
+            return await Task.FromResult(Event);
+        }
+
         public async Task DeleteEventAsync(Guid id)
         {
             var index = events.FindIndex(existingEvent => existingEvent.Id == id);
             events.RemoveAt(index);
+            await Task.CompletedTask;
+        }
+
+        public async Task UpdateEventAsync(Event Event)
+        {
+            var index = events.FindIndex(existingEvent => existingEvent.Id == Event.Id);
+            events[index] = Event;
+            await Task.CompletedTask;
+        }
+
+        public async Task UpdateEventDatesAsync(Event Event)
+        {
+            var index = events.FindIndex(existingEvent => existingEvent.Id == Event.Id);
+            events[index] = Event;
             await Task.CompletedTask;
         }
     }

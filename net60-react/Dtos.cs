@@ -10,5 +10,9 @@ namespace net60_react.Dtos
 
     public record EventDto(Guid Id, string Name, string Description, string Image, string Logo, Dates Dates, List<Product> Products, EventLocationInfo EventLocationInfo, EventContactInfo EventContactInfo, Program Program, List<Rule> Rules);
 
+    public record UpdateEventDto(string? Name, string? Description, string? Image, string? Logo);
+
+    public record UpdateEventDatesDto(DateTimeOffset StartDate, DateTimeOffset EndDate);
+
     public record OrderDto(Guid OrderId, CustomerInfo CustomerInfo, List<Product> Products, DiscountCode DiscountCode);
 }
