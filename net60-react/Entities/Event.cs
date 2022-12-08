@@ -12,6 +12,8 @@ namespace net60_react.Entities
         public EventLocationInfo EventLocationInfo { get; set; }
         public EventContactInfo EventContactInfo { get; set; }
         public Program Program { get; set; }
+
+        public List<Placement> Placements { get; set; }
         public List<Rule> Rules { get; set; }
     }
 }

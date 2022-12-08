@@ -1,7 +1,9 @@
 namespace net60_react
 {
-    public class Placements
+    public class Placement
     {
-        public List<Place> Places { get; set; }
+        public Guid Id { get; set; }
+        public string Name { get; set; }
+        public List<LatLngBoundsExpression> Bounds { get; set; }
     }
 }

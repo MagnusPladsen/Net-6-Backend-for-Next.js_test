@@ -16,7 +16,7 @@ namespace net60_react
                 CreatedDate = ticket.CreatedDate,
             };
         }
-        public static EventDto AsDto(this Event Event) // Går ikke med liten e?? wat
+        public static EventDto AsDto(this Event Event)
         {
             return new EventDto(Event.Id, Event.Name, Event.Description, Event.Image, Event.Logo, Event.Dates, Event.Products, Event.EventLocationInfo, Event.EventContactInfo, Event.Program, Event.Rules)
             {

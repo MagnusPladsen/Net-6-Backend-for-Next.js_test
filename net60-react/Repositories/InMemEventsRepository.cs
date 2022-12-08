@@ -45,7 +45,7 @@ namespace net60_react.Repositories
                                         SouthWest = 00,
                                         NorthEast = 00,
                                         NorthWest = 00,
-                                        SouthEasth = 00,
+                                        SouthEast = 00,
                                     },
                                 },
                             },
@@ -92,6 +92,20 @@ namespace net60_react.Repositories
                             EndDate = DateTimeOffset.UtcNow,
                          },
                     },
+                },
+                Placements = new List<Placement>() {
+                    new Placement {
+                        Id = Guid.NewGuid(),
+                        Name = "Plass 01",
+                        Bounds = new List<LatLngBoundsExpression>() {
+                            new LatLngBoundsExpression {
+                                SouthEast = 0.0,
+                                NorthEast = 0.0,
+                                NorthWest = 0.0,
+                                SouthWest = 0.0,
+                            },
+                        }
+                    }
                 },
                 Rules = new List<Rule>() {
                     new Rule {
