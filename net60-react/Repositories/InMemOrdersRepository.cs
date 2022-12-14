@@ -44,7 +44,7 @@ namespace net60_react.Repositories
                                         SouthWest = 00,
                                         NorthEast = 00,
                                         NorthWest = 00,
-                                        SouthEasth = 00,
+                                        SouthEast = 00,
                                     },
                                 },
                             },
