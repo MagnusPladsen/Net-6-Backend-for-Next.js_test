@@ -1,26 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer base {
+  [type='text'],
+  [type='email'],
+  [type='url'],
+  [type='password'],
+  [type='number'],
+  [type='date'],          
+  [type='datetime-local'],
+  [type='month'],
+  [type='search'],
+  [type='tel'],
+  [type='time'],
+  [type='week'],
+  [multiple],
+  textarea,
+  select {
+    @apply w-full border-border rounded shadow-inner focus:border-primary
+  }
+}
+
+[type='checkbox'] {
+  @apply focus:ring-primary border-border mt-2
+}
+
+label {
+  @apply font-nunito font-bold
+}
+
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Roboto', sans-serif;
+  background-color: #FAFAFA;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+}
+
+* {
+  @apply scrollbar-hide
 }
 
 a {
   color: inherit;
-  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.5;
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+  font-weight: 700;
+}
+
+p {
+  font-family: 'Nunito', sans-serif;
 }
 
 * {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+.leaflet-container {
+  @apply h-[300px] md:h-[400px] rounded-lg relative left-[50%] translate-x-[-50%] bg-white
+}
+
+@media print {
+  .noPrint{
+    display: none;
   }
-  body {
-    color: white;
-    background: black;
+  .printThis{
+    margin: 0;
   }
+  .onlyPrint{
+    display: block;
+  }
+}
+
+.sr-only {
+  display: none;
 }
